@@ -270,7 +270,6 @@
 
     <script>
         const WEB_URL = 'https://play.google.com/store/apps/details?id=com.septimuslab.purescan';
-        const MARKET_URL = 'market://details?id=com.septimuslab.purescan';
         const counter = document.getElementById('counter');
         const circle = document.getElementById('timerCircle');
         const C = 2 * Math.PI * 7;
@@ -280,9 +279,7 @@
         circle.style.strokeDashoffset = '0';
 
         function redirect() {
-            // Android: try market:// first, fallback to web
-            window.location.href = MARKET_URL;
-            setTimeout(function() { window.location.href = WEB_URL; }, 500);
+            window.location.href = WEB_URL;
         }
 
         const tick = setInterval(() => {
