@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://purescan.septimuslab.com/sitemap.xml
