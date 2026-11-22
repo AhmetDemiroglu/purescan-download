@@ -24,7 +24,6 @@
     <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="/favicon.ico?v=2" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=2" />
     <link rel="manifest" href="/site.webmanifest?v=2" />
-    <meta http-equiv="refresh" content="3;url=https://play.google.com/store/apps/details?id=com.septimuslab.purescan">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -269,45 +268,10 @@
             Google Play'den İndir
         </a>
 
-        <div class="redirect">
-            <div class="timer">
-                <svg viewBox="0 0 18 18">
-                    <circle class="timer-track" cx="9" cy="9" r="7"/>
-                    <circle class="timer-progress" id="timerCircle" cx="9" cy="9" r="7"/>
-                </svg>
-                <span id="counter">3</span>
-            </div>
-            <span>Yönlendiriliyor…</span>
-        </div>
     </div>
 
     <div class="studio">
         <a href="https://www.septimuslab.com/" target="_blank" rel="noopener"><img src="assets/septimuslab/septimuslab-imza-acik-zemin.svg" alt="by SeptimusLab" class="studio-logo" width="164" height="21"></a>
     </div>
-
-    <script>
-        const WEB_URL = 'https://play.google.com/store/apps/details?id=com.septimuslab.purescan';
-        const counter = document.getElementById('counter');
-        const circle = document.getElementById('timerCircle');
-        const C = 2 * Math.PI * 7;
-        let sec = 3;
-
-        circle.style.strokeDasharray = C;
-        circle.style.strokeDashoffset = '0';
-
-        function redirect() {
-            window.location.href = WEB_URL;
-        }
-
-        const tick = setInterval(() => {
-            sec--;
-            counter.textContent = sec;
-            circle.style.strokeDashoffset = C * (1 - sec / 3);
-            if (sec <= 0) {
-                clearInterval(tick);
-                redirect();
-            }
-        }, 1000);
-    </script>
 </body>
 </html>
